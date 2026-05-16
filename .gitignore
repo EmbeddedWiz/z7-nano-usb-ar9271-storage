@@ -1,0 +1,15 @@
+# Temp files 
+
+build/
+components/plnx_workspace/
+.petalinux/
+
+# Auto gen files by PetaLinux
+project-spec/meta-plnx-generated/
+
+# Output images
+images/linux/
+
+# Logs and tmp
+*.log
+

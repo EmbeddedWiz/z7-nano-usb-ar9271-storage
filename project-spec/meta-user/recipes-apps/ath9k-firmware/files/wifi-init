@@ -1,0 +1,18 @@
+#!/bin/sh
+case "$1" in
+  start)
+    echo "Starting Wi-Fi..."
+    rm -rf /var/run/wpa_supplicant/wlan0
+    wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
+    sleep 5
+    udhcpc -i wlan0 &
+    ;;
+  stop)
+    killall udhcpc
+    killall wpa_supplicant
+    ;;
+  *)
+    echo "Usage: $0 {start|stop}"
+    exit 1
+esac
+exit 0

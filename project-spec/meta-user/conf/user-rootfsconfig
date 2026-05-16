@@ -1,0 +1,14 @@
+menu "user-apps"
+config ath9k-firmware
+bool "ath9k-firmware"
+help
+  ath9k-firmware
+config gpio-demo
+bool "gpio-demo"
+help
+  gpio-demo
+config peekpoke
+bool "peekpoke"
+help
+  peekpoke
+endmenu

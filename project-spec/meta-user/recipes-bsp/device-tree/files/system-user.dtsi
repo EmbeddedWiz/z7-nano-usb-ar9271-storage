@@ -1,0 +1,16 @@
+/include/ "system-conf.dtsi"
+
+/ {
+    /* Описание USB PHY как "заглушки", так как он управляется через ULPI */
+    usb_phy0: usb_phy0 {
+        compatible = "usb-nop-xceiv";
+        #phy-cells = <0>;
+    };
+};
+
+&usb0 {
+    status = "okay";
+    dr_mode = "host";       /* Принудительно включаем режим Хоста */
+    usb-phy = <&usb_phy0>;
+};
+
